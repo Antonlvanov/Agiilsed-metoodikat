@@ -1,3 +1,5 @@
+Tehtud 1-3 "increment"'id
+
 class Patsient:
     def __init__(self, nimi, vanus):
         self.nimi = nimi
