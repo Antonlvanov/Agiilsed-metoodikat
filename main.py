@@ -1,4 +1,53 @@
-Tehtud 1-3 "increment"'id
+# Iteratiivne 
+
+logs = []
+
+def liitumine ():
+    try: 
+        a = float(input("sisesta 1 arv: "))
+        b = float(input("sisesta 2 arv: "))
+    except:
+        print ("wrong input")
+    sign = input("action: ")
+    if sign == "+" :
+        return a+b
+        logs.append("liitumine "+ a + " ja " + b)
+    if sign == "-" :
+        return a-b
+        logs.append("lahutamine "+ a + " ja " + b)
+    if sign == "*" :
+        return a*b
+        logs.append("korrutamine "+ a + " ja " + b)
+    if sign == "/" :
+        try: 
+            return a/b
+            logs.append("jagamine "+ a + " ja " + b)
+        except ZeroDivisionError:
+            print ("cant devide by 0")
+    else:
+        return "wrong action"
+    
+def logs_out():
+    jag=0
+    korr=0
+    liit=0
+    lahut=0
+    for elem in logs:
+        if elem.__contains__("liitumine"):
+            liit=+1
+        if elem.__contains__("lahutamine"):
+            lahut=+1
+        if elem.__contains__("korrutamine"):
+            korr=+1
+        if elem.__contains__("jagamine"):
+            jag=+1
+    return [liit,lahut,korr,jag]
+
+print (liitumine())
+
+
+# Inkrementaalne lähenemine
+# Tehtud 1-3 increment'id
 
 class Patsient:
     def __init__(self, nimi, vanus):
